@@ -1,0 +1,14 @@
+﻿@page "/graphics"
+@inject IJSRuntime js;
+
+<h1>Graphics</h1>
+
+<button class="btn btn-primary" @onclick="@(() => js.InvokeVoidAsync("execute"))">実行</button>
+<div class="my-2">
+    <canvas id="graphics" width="@width" height="@height"></canvas>
+</div>
+
+@code {
+    private int width = 800;
+    private int height = 600;
+}

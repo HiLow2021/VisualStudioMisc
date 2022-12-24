@@ -1,0 +1,33 @@
+﻿@page "/cssComponent"
+@inject NavigationManager navigationManager
+
+<h3>CSSComponent</h3>
+
+<div class="container ml-2">
+    <div class="@("my-2 " + IsBlueLedStyle)">
+        <input class="form-check-input" type="checkbox" @bind="IsBlueLedChecked" />
+    </div>
+    <div class="@("my-2 " + IsGreenLedStyle)">
+        <input class="form-check-input" type="checkbox" @bind="IsGreenLedChecked" />
+    </div>
+    <div class="@("my-2 " + IsYellowLedStyle)">
+        <input class="form-check-input" type="checkbox" @bind="IsYellowLedChecked" />
+    </div>
+    <div class="@("my-2 " + IsRedLedStyle)">
+        <input class="form-check-input" type="checkbox" @bind="IsRedLedChecked" />
+    </div>
+</div>
+
+<button class="btn btn-primary" @onclick="@(() => navigationManager.NavigateTo("component"))">戻る</button>
+<button class="btn btn-primary" @onclick="@(() => navigationManager.NavigateTo("matBlazorComponent"))">次へ</button>
+
+@code {
+    private bool IsBlueLedChecked;
+    private bool IsGreenLedChecked;
+    private bool IsYellowLedChecked;
+    private bool IsRedLedChecked;
+    private string IsBlueLedStyle => IsBlueLedChecked ? "led led-blue" : "led led-blue-off";
+    private string IsGreenLedStyle => IsGreenLedChecked ? "led led-green" : "led led-green-off";
+    private string IsYellowLedStyle => IsYellowLedChecked ? "led led-yellow" : "led led-yellow-off";
+    private string IsRedLedStyle => IsRedLedChecked ? "led led-red" : "led led-red-off";
+}

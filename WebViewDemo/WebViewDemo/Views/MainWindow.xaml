@@ -1,0 +1,26 @@
+﻿<metro:MetroWindow x:Class="WebViewDemo.Views.MainWindow"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   xmlns:prism="http://prismlibrary.com/"
+                   xmlns:metro="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                   xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                   xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                   xmlns:local="clr-namespace:WebViewDemo.Views"
+                   xmlns:vm="clr-namespace:WebViewDemo.ViewModels"
+                   TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+                   Background="{DynamicResource MaterialDesignPaper}"
+                   mc:Ignorable="d"
+                   prism:ViewModelLocator.AutoWireViewModel="True"
+                   d:DataContext="{d:DesignInstance vm:MainWindowViewModel}"
+                   Title="WebViewDemo" Height="1000" Width="1200" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen">
+    <metro:MetroWindow.RightWindowCommands>
+        <metro:WindowCommands>
+            <Button Content="{iconPacks:Modern Kind=Pin}" Opacity="{Binding Configuration.PinOpacity}" Command="{Binding TopMostCommand}"/>
+        </metro:WindowCommands>
+    </metro:MetroWindow.RightWindowCommands>
+    <Grid>
+        <ContentControl prism:RegionManager.RegionName="MainWindowContentRegion" Grid.Row="1"/>
+    </Grid>
+</metro:MetroWindow>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VRChatAPITest", "VRChatAPITest\VRChatAPITest.csproj", "{3C539C0C-FB1E-491C-A737-6E9AEF547586}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C539C0C-FB1E-491C-A737-6E9AEF547586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C539C0C-FB1E-491C-A737-6E9AEF547586}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C539C0C-FB1E-491C-A737-6E9AEF547586}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C539C0C-FB1E-491C-A737-6E9AEF547586}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DC4A9B2-BDBE-42F9-ACBC-6440F10BD1E0}
+	EndGlobalSection
+EndGlobal

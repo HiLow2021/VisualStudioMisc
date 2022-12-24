@@ -1,0 +1,34 @@
+﻿@page "/matBlazorComponent"
+@inject NavigationManager navigationManager
+
+<h3>MatBlazorComponent</h3>
+
+<div class="mat-layout-grid">
+    <div class="mat-layout-grid-inner">
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-3 ">
+            <MatButton Raised="true" OnClick="@(e => { okCancelDialogIsOpen = true; })">OKCancel Dialog</MatButton>
+        </div>
+        <div class="mat-layout-grid-cell mat-layout-grid-cell-span-12 ">
+            @result
+        </div>
+    </div>
+</div>
+<!-- ok cancel dialog -->
+<MatDialog @bind-IsOpen="@okCancelDialogIsOpen" CanBeClosed="false">
+    <MatDialogTitle>Title</MatDialogTitle>
+    <MatDialogContent>
+        <p>Message</p>
+    </MatDialogContent>
+    <MatDialogActions>
+        <MatButton OnClick="@(e => { okCancelDialogIsOpen = false; result = "OK"; })">OK</MatButton>
+        <MatButton OnClick="@(e => { okCancelDialogIsOpen = false; result = "Cancel"; })">Cancel</MatButton>
+    </MatDialogActions>
+</MatDialog>
+
+<button class="btn btn-primary" @onclick="@(() => navigationManager.NavigateTo("cssComponent"))">戻る</button>
+<button class="btn btn-primary" @onclick="@(() => navigationManager.NavigateTo("matBlazorComponent"))">次へ</button>
+
+@code {
+    string result = string.Empty;
+    bool okCancelDialogIsOpen = false;
+}

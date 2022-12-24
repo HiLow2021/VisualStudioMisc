@@ -1,0 +1,8 @@
+﻿@page "/config"
+@inject UserSettings settings;
+
+
+<h1>Config</h1>
+
+<input name="ID" @bind="settings.Id" />
+<input name="UserName" @bind="settings.UserName" />

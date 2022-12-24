@@ -1,0 +1,51 @@
+﻿@page "/session"
+@inject NavigationManager navigationManager
+@inject UserSettings settings
+@implements IAsyncDisposable
+
+<h3>Session</h3>
+
+@if (NotificationHub.Users == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>UserName</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in NotificationHub.Users)
+            {
+                <tr>
+                    <td>@item.Key</td>
+                    <td>@item.Value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        if (settings.HubClient != null)
+        {
+            return;
+        }
+
+        settings.HubClient = new HubClient(settings.UserName ?? "BrowserClient_" + DateTime.Now.ToString("yyyyMMdd_HHmmss"), navigationManager.BaseUri);
+        await settings.HubClient.StartAsync();
+
+        await base.OnInitializedAsync();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        await settings.HubClient.DisposeAsync();
+    }
+}
