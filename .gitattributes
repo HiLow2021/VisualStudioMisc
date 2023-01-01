@@ -61,3 +61,5 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+WebStudy/WebStudy/wwwroot/scripts/lib/**/* linguist-vendored
